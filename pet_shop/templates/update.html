@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create Pet{% endblock %}
+
+{% block content %}
+    <form action="{% url 'pet-update' pet.id %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form|crispy}}
+      <input type="submit" value="Update">
+      <a href="{% url 'pet-list' %}"><button type="button">Cancel</button></a>
+    </form>
+{% endblock %}

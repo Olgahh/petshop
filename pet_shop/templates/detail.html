@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pet List{% endblock %}
+
+{% block content %}
+    <h1>Name: {{pet.name}}</h1>
+    <ul>
+        <li>Age: {{pet.age}}</li>
+        <li>Image: <img src="{{pet.image.url}}" >{{pet.image}}</li>
+        <li>Price: {{pet.price}}</li>
+        <li>Availabilty: {{pet.available}}</li>
+        <a href="{% url 'pet-update' pet.id %}"><button type="button" name="Update">Update</button></a>
+    </ul>
+
+{% endblock %}
